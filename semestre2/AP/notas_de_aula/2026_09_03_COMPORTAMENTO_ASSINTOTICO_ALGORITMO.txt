@@ -1,0 +1,16 @@
+Comportamento assintótico de algoritmo
+
+Serve para medir o desempenho com relação ao tempo de execução ou uso de memória de um algoritmo.
+
+Notações:
+
+Big O: Serve para indicar o desempenho no PIOR CENÁRIO POSSÍVEL.
+Big ômega: Serve para indicar o desempenho no MELHOR CENÁRIO POSSÍVEL.
+Big Teta: Serve para indicar o desempenho no limite exato, entre o limite superior e inferior
+
+Algoritmo to tipo Big O(1): Comportamento assintótico constante. 
+Qualquer que seja o número de entrada de dados (n) o tempo é constante. Gera uma linha constante no gráfico. Não importa a quantidade de dados, mas a quantidade de interações.
+
+Algoritmo to tipo Big O(n): Comportamento assintótico linear, representado pela função f(x) = a*x no gráfico. Ou seja, o tempo de execução é diretamente proporcional ao número de entrada de dados (n).
+
+Algoritmo to tipo Big O(n^2): Comportamento assintótico quadrático, representado pela função f(x) = a^x. Ou seja, o tempo de execução cresce de forma exponencial conforme aumenta-se o número de entrada de dados (n).  
