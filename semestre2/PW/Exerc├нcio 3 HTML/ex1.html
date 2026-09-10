@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style type="text/css">
+        table {
+            margin: 8px;
+        }
+        table td {
+            border: 1px solid black;
+            margin: 0px;
+            padding: 0px;
+        }
+        table>caption {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <caption>Tabela A</caption>
+        <tr>
+            <td rowspan="3">Célula 1</td>
+            <td>Célula 2</td>
+        </tr>
+        <tr>
+            <td>Célula 3</td>
+        </tr>
+        <tr>
+            <td>Célula 4</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Tabela B</caption>
+        <tr>
+            <td colspan="2">Célula 1</td>
+            <td>Célula 2</td>
+        </tr>
+        <tr>
+            <td>Célula 3</td>
+            <td>Célula 4</td>
+            <td>Célula 5</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Tabela C</caption>
+        <tr>
+            <td>Peças</td>
+            <td>Preço</td>
+            <td rowspan="2">INFORMÁTICA</td>
+        </tr>
+        <tr>
+            <td>HD</td>
+            <td>300,00</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção de usuários do Sistema Interno</title>
+</head>
+
+<body>
+    <form action="">
+        <label>Login:<input type="text" required></label>
+        <br>
+        <label>Senha:<input type="password" required></label>
+        <br>
+        
+        <label>Status:
+            <select type="" list="status">
+                <option value="Ativo">Ativo</option>
+                <option value="Inativo">Inativo</option>
+            </select>
+        </label>
+        <br>
+        <span>Tipo:</span>
+        <input type="radio" name="type" id="tech" checked>
+        <label for="tech">Técnico</label>
+        <input type="radio" name="type" id="prof">
+        <label for="prof">Professor</label>
+        <input type="radio" name="type" id="stud">
+        <label for="stud">Aluno</label>
+        <br>
+
+        <label for="creation-date">Data Criação:</label>
+        <input type="date" id="creation-date" required>
+        <br>
+
+        <span>Perfil</span>
+        <input type="radio" name="role" id="guest" checked>
+        <label for="guest">Convidado</label>
+        <input type="radio" name="role" id="admin">
+        <label for="admin">Administrador</label>
+        <br>
+       
+        <span>Observações</span>
+        <textarea cols="30" rows="4" placeholder="Insira sua sugestão, reclamação ou elogio..."></textarea>
+        <br>
+
+        <span>Módulos</span>
+        <input type="checkbox" name="modules" id="purchases">
+        <label for="purchases">Compras</label>
+        <input type="checkbox" name="modules" id="library">
+        <label for="library">Biblioteca</label>
+        <input type="checkbox" name="modules" id="academic">
+        <label for="academic">Acadêmico</label>
+        <br>
+        <input type="checkbox" name="modules" id="doc">
+        <label for="doc">Documentação</label>
+        <input type="checkbox" name="modules" id="human-resources">
+        <label for="human-resources">Recursos Humanos</label>
+        <br>
+
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Excluir">
+    </form>
+</body>
+
+</html>

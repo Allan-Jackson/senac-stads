@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Acessibilidade</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Teste do Leitor de Tela</h1>
+    <p>Use a tecla <strong>TAB</strong> para navegar pelos campos abaixo.</p>
+    <hr>
+
+    <!-- EXEMPLO 1: RUIM (Sem Fieldset) -->
+    <h2>1. Exemplo SEM Fieldset (Errado)</h2>
+    <p>Tipo de Usuário:</p>
+    <label><input type="radio" name="tipo1" value="t"> Técnico</label>
+    <label><input type="radio" name="tipo1" value="p"> Professor</label>
+
+    <br><br>
+    <hr>
+
+    <!-- EXEMPLO 2: IDEAL (Com Fieldset) -->
+    <h2>2. Exemplo COM Fieldset (Correto)</h2>
+    <form>
+        <fieldset>
+            <legend>Tipo de Usuário</legend>
+            <label><input type="radio" name="tipo2" value="t"> Técnico</label>
+            <label><input type="radio" name="tipo2" value="p"> Professor</label>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
