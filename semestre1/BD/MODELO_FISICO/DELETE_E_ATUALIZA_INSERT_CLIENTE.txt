@@ -1,0 +1,93 @@
+INSERT INTO cliente
+(id_cliente, nome_cliente, endereco_cliente, cpf_cliente,  date_nascimento_cliente, senha)
+VALUE
+( 1,'João', 'Estrada de Itapecerica 2590,Vila Velha', '956.195.325-21', '1988-10-02', 'vbdiofoibfiov'),
+( 2,'Felipe', 'Rua são jão 250, Vila Nova ', '571.914.180-44', '2007-10-25', 'ovvnçkjdsfgf'),
+( 3,'Rafael', 'Rua Valo Fundo 405, Vila Estranha', '450.256.102-55', '2001-05-26', '34325fgafgda'),
+( 4,'Gustavo', 'Estrada Grande 102, Vila Feia', '850.563.256-99', '1995-05-25', 'TVdgvasgd123153'),
+( 5,'Caleb', 'Estrada de Cubatao 2540, Jardim Lindo', '470.555.632-98', '1989-4-06', 'fajhufi3324*&'),
+( 6,'Pedro', 'Estrada de Geada 2425,Piratininga', '254.236.895-45', '2006-12-25', '%¨&&67tfbhdsbf'),
+( 7,'Mateus', 'Rua Lira 420, Litigio', '320.359.569-55', '2007-09-22', ',glRAFIRA156'),
+( 8,'Felps', 'Rua Vargas 365,Vinho Feio', '514.256.848-78', '2002-04-25', 'Batmanshaha23y7'),
+( 9,'Lucas', 'Rua Igara 123,Valinhos', '102.562.254-73', '2005-11-20', 'Corinthians1561561$@#$#'),
+( 10,'Ifaras', 'Rua Oruam 233,Larue', '625.545.256-44', '1999-02-25', 'Vaiflamengo4376423784');
+
+
+            select * from item_pedido;
+            select * from produto;
+            select * from categoria;
+            select * from estoque;
+            select * from fornecedor;
+            select * from endereco_entrega;
+            select * from boleto;
+            select * from cartao_credito;
+            select * from cartao_debito;
+            select * from cartao;
+            select * from pedido;
+            
+            
+-- APAGA REGISTROS DA ITEM_PEDIDO
+delete from item_pedido
+where id_produto in (1,2,3,4,5) or id_pedido in (1,2,3,4,5);
+
+-- APAGA REGISTROS DA CATEGORIA
+delete from categoria
+where id_produto in (1,2,3,4,5);
+
+-- APAGA REGISTROS DA FORNECEDOR
+delete from fornecedor
+where id_estoque in (1,2,3,4,5);
+
+-- APAGA REGISTROS DA ESTOQUE
+delete from estoque
+where id_produto in (1,2,3,4,5);
+
+-- APAGA REGISTROS DA PRODUTO
+delete from produto
+where id_produto in (1,2,3,4,5);
+
+-- APAGA REGISTROS DA ENDERECO_ENTREGA
+delete from endereco_entrega
+where id_pedido in (1,2,3,4,5, 6);
+
+-- APAGA REGISTROS DA BOLETO
+delete from boleto
+where id_pagamento in (1,2,3,4,5, 6);
+
+-- APAGA REGISTROS DA CARTAO_DEBITO
+delete from cartao_debito
+where id_cartao in (1,2,3,4,5, 6);
+
+-- APAGA REGISTROS DA CARTAO_CREDITO
+delete from cartao_credito
+where id_cartao in (1,2,3,4,5, 6);
+
+-- APAGA REGISTROS DA CARTAO
+delete from cartao
+where id_pagamento in (1,2,3,4,5, 6);
+
+-- APAGA REGISTROS DA PAGAMENTO
+delete from pagamento
+where id_pedido in (1,2,3,4,5, 6);
+
+-- APAGA REGISTROS DA PEDIDO
+delete from pedido
+where id_cliente in (1,2,3,4,5) or id_pedido in (1,2,3,4,5);
+
+-- APAGA REGISTROS DA CLIENTE
+delete from cliente
+where id_cliente in (1,2,3,4,5);
+
+select count(*) qtd_item_pedido from item_pedido;
+select count(*) qtd_categoria from categoria;
+select count(*) qtd_fornecedor from fornecedor;
+select count(*) qtd_estoque from estoque;
+select count(*) qtd_produto from produto;
+select count(*) qtd_endereco_entrega from endereco_entrega;
+select count(*) qtd_boleto from boleto;
+select count(*) qtd_debito from cartao_debito;
+select count(*) qtd_credito from cartao_credito;
+select count(*) qtd_cartao from cartao;
+select count(*) qtd_pagamento from pagamento;
+select count(*) qtd_pedido from pedido;
+select count(*) qtd_cliente from cliente;

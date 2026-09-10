@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS senac_1_semestre;
+CREATE DATABASE senac_1_semestre;
+USE senac_1_semestre;
+
+SHOW DATABASES;
+
+DROP TABLE IF EXISTS funcionarios;
+
+/*
+	BLOCO DE COMENTÁRIOS
+*/
+
+-- COMENTÁRIO DE UMA LINHA 
+# TAMBÉM COMENTÁRIO DE UMA LINHA
+
+# CRIAR TABELA DO LADO 1 DA CARDINALIDADE (QUE NÃO POSSUEM CHAVE ESTRANGEIRA)
+CREATE TABLE funcionarios (
+	id_func INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(200) not null,
+    salario DOUBLE NOT NULL DEFAULT 0,
+    departamento VARCHAR(100) NOT NULL,
+    data_de_admissao DATETIME
+);
+
+SELECT * FROM funcionarios;
+SELECT nome, salario FROM funcionarios;
