@@ -1,0 +1,16 @@
+- nome dos integrantes no documento
+- link do site no documento e no comentário da entrega
+- escolher site de comércios pequenos
+- enviar com 2 dias de antecedência
+
+DICAS
+- responsividade de site (fazer com resolução menor popular possível, uns 1200px de largura)
+- paginas do Figma são só seções e o preview do protótipo só executa uma única página, ou seja, utiliza uma única página para todo o site
+- podemos dividir as páginas para guidelines do projeto, site do computador e outra para outra tela (mobile) por exemplo
+- pressionar SHIFT para mover alinhado verticalmente o item com outro
+- colocar o objeto fora do frame no layout, vai aparecer nas camadas fora do frame tbm
+- usar grid de 6 colunas para alinhar os itens, pois é um número fácil de dividir as colunas em até 6, em 3, 2 ou 1, por ser um bom múltiplo
+- dá pra distribuir espaçamento entre elementos selecionados
+- pexels (repositório de imagens free)
+- transformar elementos em componentes
+- para colocar imagens nos retângulos, posso apenas selecionar o elemento, copiar uma imagem e colar (fica como preenchimento do retângulo)
