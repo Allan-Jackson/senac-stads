@@ -1,0 +1,27 @@
+task 1 'criar função para fazer a leitura de dados com validação'
+task 2 'troca da recursão por laço de repetição para voltar à tela de título'
+task 3 'criar função de escrita em "tempo real"'
+task 4: 'INTRODUÇÃO'
+	4.1: 'desenvolver o texto da história'
+	4.2: 'atualizar o texto no código
+task 5: 'adicionar o game-over'
+task 6: 'adicionar sistema de vidas'
+task 7: 'DESAFIO 1'
+	7.1: 'desenvolver enunciado e questões'
+	7.2: 'programar a função no código'
+	7.3: 'atualizar o texto do desafio'
+task 8: 'DOCUMENTAÇÃO LATEX'
+	8.1: 'desenvolver a CAPA'
+	8.2: 'desenvolver o RESUMO'
+	8.3: 'desenvolver INTRODUÇÃO'
+	8.4: 'adicionar o fluxograma
+task 9: 'NOME DO JOGO'
+task 10: escrever o READ.ME do projeto
+	10.1: 'requisitos do projeto (versão do jdk, sistema operacional, etc.)'
+	10.2: 'como rodar o projeto']
+	10.3: 'explicação do projeto'
+	10.4: 'prints do projeto'
+	10.5: 'explicação da estrutura do projeto (pasta docs)'
+
+
+CRIAR TRELLO para acompanhar andamento do projeto ou jira
