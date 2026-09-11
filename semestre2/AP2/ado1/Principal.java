@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Principal {
     static Usuario[] usuarios = new Usuario[5];
-    static Scanner ler = new Scanner(System.in);
     static int ultimaPosicao = -1;
 
     public static void main(String[] args) {
@@ -19,9 +18,7 @@ public class Principal {
         boolean executando = true;
 
         do{
-            System.out.println(txtMenu);
-
-            int opcao = ler.nextInt();
+            int opcao = Integer.parseInt(JOptionPane.showInputDialog(txtMenu));
 
             switch(opcao) {
                 case 1:
@@ -46,14 +43,12 @@ public class Principal {
             }
         }while(executando);     
 
-        System.out.println("Sistema encerrado");
+        JOptionPane.showMessageDialog(null, "Sistema encerrado");
         System.exit(0);
     }
 
     private static void buscarNome() {
-        System.out.println("Digite o nome desejado: ");
-
-        String nome = ler.next();
+        String nome = JOptionPane.showInputDialog("Digite o nome desejado: ");
 
         Usuario usuarioDesejado = null;
 
@@ -65,16 +60,14 @@ public class Principal {
         }
 
         if(usuarioDesejado == null) {
-            System.out.println("Usuário com nome " + nome + " não encontrado!");
+            JOptionPane.showMessageDialog(null, "Usuário com nome " + nome + " não encontrado!");
         }else {
-            System.out.printf("Nome: %s | Senha: %d\n", usuarioDesejado.getNome(), usuarioDesejado.getSenha());
+            JOptionPane.showMessageDialog(null, "Nome: %s | Senha: %d\n".formatted(usuarioDesejado.getNome(), usuarioDesejado.getSenha()));
         }
     }
 
     private static void buscarSenha() {
-        System.out.println("Digite a senha desejada: ");
-
-        int senha = ler.nextInt();
+        int senha = Integer.parseInt(JOptionPane.showInputDialog("Digite a senha desejada: "));
 
         Usuario usuarioDesejado = null;
 
@@ -86,30 +79,26 @@ public class Principal {
         }
 
         if(usuarioDesejado == null) {
-            System.out.println("Usuário com a senha " + senha + " não encontrado!");
+            JOptionPane.showMessageDialog(null, "Usuário com a senha " + senha + " não encontrado!");
         }else {
-            System.out.printf("Nome: %s | Senha: %d\n", usuarioDesejado.getNome(), usuarioDesejado.getSenha());
+            JOptionPane.showMessageDialog(null, "Nome: %s | Senha: %d\n".formatted(usuarioDesejado.getNome(), usuarioDesejado.getSenha()));
         }
     }
 
     public static void cadastrar() {
         if(ultimaPosicao == usuarios.length - 1) {
-            System.out.println("\n\n");
-            System.out.println("Cadastros já realizados!");
+            JOptionPane.showMessageDialog(null, "Cadastros já realizados!");
             return;
         }
-
-        System.out.println("\n\n");
 
         int opcao = 0;
 
         do {
             int i = ultimaPosicao + 1;
 
-            System.out.println("Digite o nome do " + (i+1) + "º usuário: ");
-            String nome = ler.next();
-            System.out.println("Digite a senha do " + (i+1) + "º usuário: ");
-            int senha = ler.nextInt();
+            String nome = JOptionPane.showInputDialog("Digite o nome do " + (i+1) + "º usuário: ");
+
+            int senha = Integer.parseInt(JOptionPane.showInputDialog("Digite a senha do " + (i+1) + "º usuário: "));
 
             Usuario usuario = new Usuario(nome, senha);
 
@@ -117,8 +106,8 @@ public class Principal {
             ultimaPosicao = i;
 
             if(ultimaPosicao < usuarios.length - 1) {
-                System.out.println("Deseja cadastrar outro usuário? [S/N] ");
-                opcao = ler.next().equalsIgnoreCase("S") ? 1 : 0;
+                String resposta = JOptionPane.showInputDialog("Deseja cadastrar outro usuário? [S/N] ");
+                opcao = resposta.equalsIgnoreCase("S") ? 1 : 0;
             }
 
         }while(opcao == 1);
@@ -135,9 +124,10 @@ public class Principal {
             }
         }
 
-        System.out.println(saida);
+        JOptionPane.showMessageDialog(null, saida);
     }
 
+    //TODO
     public static void listarOrdenadoNome() {
         String saida = "\n\n";
 
@@ -148,7 +138,7 @@ public class Principal {
             }
         }
 
-        System.out.println(saida);
+        JOptionPane.showMessageDialog(null, saida);
     }
 
     public static void listarOrdenadoSenha() {
