@@ -9,30 +9,80 @@
     <form action="">
         <fieldset>
             <legend>Identificação do Usuário</legend>
-            <label for="user">Nome*:</label>
-            <input type="text" required id="user">
+            <label for="usuario">Nome*:</label>
+            <input type="text" required id="usuario">
             <br>
-            <label for="password">Senha*:</label>
-            <input type="password" required id="password">
+            <label for="senha">Senha*:</label>
+            <input type="password" required id="senha">
             <br>
             <p>
                 Sexo*:
-                <label for="masc"><input type="radio" value="Masculino" name="gender" id="masc">Masculino</label>
+                <label for="masc"><input type="radio" value="Masculino" name="gender" id="masc" checked>Masculino</label>
                 <label for="fem"><input type="radio" value="Feminino" name="gender" id="fem">Feminino</label>
             </p>
-            <label for="birthdate">Data Nascimento*:</label>
-            <input type="date" required id="birthdate">
+            <label for="data-nasc">Data Nascimento*:</label>
+            <input type="date" required id="data-nasc">
             <br>
-            <label for="civil-state">Estado Civil*:</label>
-            <select name="" id="civil-state">
+            <label for="estado-civil">Estado Civil*:</label>
+            <select id="estado-civil">
                 <option value="Casado(a)">Casado(a)</option>
                 <option value="Solteiro(a)">Solteiro(a)</option>
                 <option value="Divorciado(a)">Divorciado(a)</option>
                 <option value="Viúvo(a)">Viúvo(a)</option>
             </select>
             <br>
-            <label for="civil-state">Escolaridade:</label>
+            <label for="escolaridade">Escolaridade:</label>
+            <select id="escolaridade">
+                <option value="Analfabeto">Analfabeto</option>
+                <option value="Ensino fundamental incompleto">Ensino fundamental incompleto</option>
+                <option value="Ensino fundamental completo">Ensino fundamental completo</option>
+                <option value="Ensino médio incompleto">Ensino médio incompleto</option>
+                <option value="Ensino médio completo">Ensino médio completo</option>
+                <option value="Ensino superior incompleto">Ensino médio incompleto</option>
+                <option value="Ensino superior completo">Ensino médio completo</option>
+            </select>
+            <br>
+            <label for="ocupacao">Ocupação Principal:</label>
+            <input type="text" id="ocupacao">
+            <br>
+            <label for="renda">Renda Mensal:</label>
+            <input type="number" id="renda" min="0">
+            <br>
+            <label for="dependentes">Número de Dependentes:</label>
+            <input type="number" id="dependentes" min="0">
+            <br>
+            <label for="telefone">Telefone*:</label>
+            <input type="tel" id="telefone">
+            <br>
+            <label for="email">E-mail*:</label>
+            <input type="email" id="email">
         </fieldset>
+        <fieldset>
+            <legend>Localização</legend>
+            <label for="estado">Estado*:</label>
+            <input type="text" required id="estado">
+            <br>
+            <label for="cidade">Cidade*:</label>
+            <input type="text" required id="cidade">
+        </fieldset>
+        <fieldset>
+            <legend>Mensagem do Usuário</legend>
+            <label for="urgencia">Grau de urgência:</label>
+            <select id="urgencia">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+                <option value="Emergência">Emergência</option>
+            </select>
+            <br>
+            <label for="msg">Mensagem*:</label>
+            <textarea id="msg" cols="30" rows="10" required minlength="20"></textarea>
+            <br>
+            <label for="erro">Reportar Erro:</label>
+            <input type="file" id="erro">
+        </fieldset>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
     </form>
 </body>
 </html>
