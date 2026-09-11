@@ -6,19 +6,18 @@ public class Principal {
     static int ultimaPosicao = -1;
 
     public static void main(String[] args) {
-        String  txtMenu =  "\n\n\n\n";
-                txtMenu += "1. ler nome e senha numérica\n";
+        String  txtMenu =  "1. ler nome e senha numérica\n";
                 txtMenu += "2. listar nomes e senhas (lado a lado)\n";
                 txtMenu += "3. buscar um nome de forma sequencial \n";
                 txtMenu += "4. buscar uma senha de forma sequencial (trazer a posição caso encontre) \n";
                 txtMenu += "5. classificar por nome usando bubble sort \n";
                 txtMenu += "6. classificar as senhas usando bubble sort \n";
-                txtMenu += "7. finalizar \n";
+                txtMenu += "7. finalizar \n\n\n";
         
         boolean executando = true;
 
         do{
-            int opcao = Integer.parseInt(JOptionPane.showInputDialog(txtMenu));
+            int opcao = Integer.parseInt(JOptionPane.showInputDialog(null, txtMenu, "MENU INICIAL", JOptionPane.PLAIN_MESSAGE));
 
             switch(opcao) {
                 case 1:
@@ -35,6 +34,7 @@ public class Principal {
                     break;
                 case 5:
                     listarOrdenadoNome();
+                    break;
                 case 6:
                     listarOrdenadoSenha();
                     break;
@@ -109,6 +109,8 @@ public class Principal {
             if(ultimaPosicao < usuarios.length - 1) {
                 String resposta = JOptionPane.showInputDialog("Deseja cadastrar outro usuário? [S/N] ");
                 opcao = resposta.equalsIgnoreCase("S") ? 1 : 0;
+            }else {
+                opcao = 0;
             }
 
         }while(opcao == 1);
@@ -128,18 +130,10 @@ public class Principal {
         JOptionPane.showMessageDialog(null, saida);
     }
 
-    //TODO
     public static void listarOrdenadoNome() {
-        String saida = "\n\n";
+        Usuario[] lista = bubbleSortNome(usuarios);
 
-        //enhanced for
-        for(Usuario usuario : usuarios) {
-            if(usuario != null) {
-                saida += "Nome: %s | Senha: %d\n".formatted(usuario.getNome(), usuario.getSenha());
-            }
-        }
-
-        JOptionPane.showMessageDialog(null, saida);
+        listar(lista);
     }
 
     public static void listarOrdenadoSenha() {
@@ -163,6 +157,45 @@ public class Principal {
         }
 
         return mVetor;
+    }
+
+    public static Usuario[] bubbleSortNome(Usuario[] vetor) {
+        Usuario[] mVetor = vetor.clone();
+
+        boolean troca = true;
+        while(troca) {
+            troca = false;
+            for(int i = 0;i < ultimaPosicao; i++) {
+                if(ehMaior(mVetor[i].getNome(), mVetor[i+1].getNome())) {
+                    trocar(mVetor, i, i+1);
+                    troca = true;
+                }
+            }
+        }
+
+        return mVetor;
+    }
+
+    //devolve 'true' apenas se str1 é maior
+    public static boolean ehMaior(String str1, String str2) {
+        for(int i = 0; i < str1.length(); i++) {
+            char c1 = str1.charAt(i);
+            char c2;
+
+            try {
+                c2 = str2.charAt(i);
+            }catch (IndexOutOfBoundsException e) { //a str2 é menor. ex: str1 = "abc" e str2 = "ab"
+                return true;
+            }
+
+            if(c1 > c2) {
+                return true;
+            } else if(c2 > c1) {
+                return false;
+            }
+        }
+
+        return false; //as strings são iguais
     }
 
     private static void trocar(Usuario[] vetor, int i1, int i2) {
