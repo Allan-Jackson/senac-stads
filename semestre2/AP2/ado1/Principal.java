@@ -96,7 +96,8 @@ public class Principal {
         do {
             int i = ultimaPosicao + 1;
 
-            String nome = JOptionPane.showInputDialog("Digite o nome do " + (i+1) + "º usuário: ");
+            String nome = JOptionPane.showInputDialog("Digite o nome do " + (i+1) + "º usuário: ").toLowerCase();
+            nome = nome.substring(0, 1).toUpperCase() + nome.substring(1); //capitalize name
 
             int senha = Integer.parseInt(JOptionPane.showInputDialog("Digite a senha do " + (i+1) + "º usuário: "));
 
