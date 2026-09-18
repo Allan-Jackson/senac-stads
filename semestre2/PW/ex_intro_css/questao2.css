@@ -1,0 +1,158 @@
+:root {
+    --img-po: url("https://freepngimg.com/save/14897-kung-fu-panda-png/512x512");
+    --img-scroll: url("https://img.magnific.com/free-vector/elegant-mandala-pattern-ethnic-traditional-background_1017-45150.jpg?semt=ais_hybrid&w=740&q=80");
+    --img-logo: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e7ae2ac9-924a-4ab2-ba16-c4b52c22c817/d9mqjo5-8005dcd6-be61-4288-802c-6fa832af0706.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9lN2FlMmFjOS05MjRhLTRhYjItYmExNi1jNGI1MmMyMmM4MTcvZDltcWpvNS04MDA1ZGNkNi1iZTYxLTQyODgtODAyYy02ZmE4MzJhZjA3MDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.U0WMAnawpwLgp2ez0rTFr9V4XzR2udfxmKcmgvFjgV8");
+    --img-title: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e6724e80-59f2-45bb-88ad-dec3d19edb03/dhk5gfm-2062db21-1953-4ec9-9a31-904079fb83f0.png/v1/fill/w_862,h_867/kung_fu_panda_symbol__by_picsartstudios_dhk5gfm-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODY3IiwicGF0aCI6Ii9mL2U2NzI0ZTgwLTU5ZjItNDViYi04OGFkLWRlYzNkMTllZGIwMy9kaGs1Z2ZtLTIwNjJkYjIxLTE5NTMtNGVjOS05YTMxLTkwNDA3OWZiODNmMC5wbmciLCJ3aWR0aCI6Ijw9ODYyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.4rZMh4GAMbz2QlhAfjoOTNuWYvyYoqpQB71q459NcP0");
+    --img-vertical: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqcaUGQHpF8ign3JCX7GrXP0v-XwKos7cM1ASQ3CfxUw&s=10");
+    --img-furious-five: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9fa58aab-7b0a-45d5-88df-1d1cbfc65d89/dipuu97-b61c8fd4-ff85-4d29-8a32-eb916af3ae09.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi85ZmE1OGFhYi03YjBhLTQ1ZDUtODhkZi0xZDFjYmZjNjVkODkvZGlwdXU5Ny1iNjFjOGZkNC1mZjg1LTRkMjktOGEzMi1lYjkxNmFmM2FlMDkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.I2v9rvK75fzDUV1QQwcM6FlLk7N8qGn1d7vnValVFbQ");
+    --header-height: 20vh;
+}
+
+.back-blue {
+    background-color: aqua;
+}
+
+.back-green {
+    background-color: #88E788;
+}
+
+.back-rpt-all {
+    background-image: var(--img-scroll);
+    background-repeat: repeat;
+}
+
+.back-rpt-y {
+    background-image: var(--img-vertical);
+    background-position: right;
+    background-size: 30vw;
+    background-repeat: repeat-y;
+}
+
+.back-norpt {
+    background-image: var(--img-logo);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.back-norpt-center {
+    background-image: var(--img-title);
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.back-norpt-center-fixed {
+    background-image: var(--img-furious-five);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    background-attachment: fixed;
+    background-color: yellow;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    min-height: 100px;
+    height: var(--header-height);
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 8px solid blue;
+}
+
+nav {
+    height: 100%;
+    box-sizing: border-box;
+    line-height: var(--header-height);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-type: none;
+    margin: 8px 0px;
+    display: inline;
+}
+
+nav li+li::before {
+    content: " | ";
+}
+
+nav li a {
+    --color-link: blue;
+    color: var(--color-link);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    --color-link: white;
+}
+
+
+main.home.back-rpt-y {
+    padding-right: 30vw;
+}
+
+main.home article {
+    margin-right: 16px;
+    background-color: whitesmoke;
+}
+
+.content {
+    padding: 0 8px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+main.home h1 {
+    height: 4em;
+    box-sizing: border-box;
+    padding-top: 2em;
+    color: yellow;
+    text-align: center;
+}
+
+main.furious-five h1 {
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+main.furious-five article {
+    width: 50%;
+    background-color: rgba(255, 255, 255, .4);
+    margin: auto;
+}
+
+main.furious-five h2 {
+    color: rgb(139, 7, 7);
+}
+
+main.furious-five hr {
+    border-color: rgb(139, 7, 7);
+}
+
+p {
+    line-height: 1.5;
+}
+
+main.furious-five img {
+    height: 145px;
+}
+
+footer {
+    text-align: center;
+
+    padding: 0.5em 0;
+    border-top: 8px solid red;
+}
