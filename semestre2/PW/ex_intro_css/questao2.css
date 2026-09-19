@@ -63,6 +63,15 @@ body {
     margin: 0;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
 header.main-menu {
     min-height: 100px;
     height: var(--header-height);
@@ -100,7 +109,8 @@ header.main-menu {
 }
 
 .main-menu nav li a:hover {
-    --color-link: yellow;
+    --color-link: white;
+    font-weight: 900;
 }
 
 header.profile {
@@ -239,7 +249,7 @@ main.curriculum {
 
     border: 2px solid black;
     border-radius: 4px;
-    
+
 }
 
 .curriculum section h2 {
@@ -254,6 +264,71 @@ main.curriculum {
     margin: 0 16px;
 }
 
+
+.language-item {
+    /* background-color: #f7f7f7; */
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.language-item .language-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    background-color: rgb(169, 173, 240);
+    padding: 8px;
+    border-radius: 0 10px 0 0;
+    width: 100px;
+}
+
+.skill-list {
+    padding: 8px;
+    /* background-color: #f5eda2; */
+    width: fit-content;
+    /* border: 1px solid rgb(70, 67, 67) */
+}
+
+.skill-list .skill-item {
+    margin: 16px 8px;
+}
+
+.skill-list .skill-name {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: .9em;
+}
+
+.level-bar {
+    --primary-cl: rgb(235, 115, 135);
+    --second-cl: rgb(161, 154, 156);
+}
+
+.level-bar span[class^=bar] {
+    color: var(--level-cl);
+    background-color: var(--level-cl);
+    font-size: 10px;
+    padding: 0px 16px;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.level-bar span[class^=bar]:first-child {
+    margin-left: 0;
+}
+
+.level-bar span.bar-filled {
+    --level-cl: var(--primary-cl);
+}
+
+.level-bar span.bar {
+    --level-cl: var(--second-cl);
+}
+
+.level-bar .level-label {
+    font-size: .8em;
+    color: var(--primary-cl);
+    margin-left: 8px;
+}
 
 
 footer {
