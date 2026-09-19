@@ -63,7 +63,7 @@ body {
     margin: 0;
 }
 
-header#main-menu {
+header.main-menu {
     min-height: 100px;
     height: var(--header-height);
     padding: 10px;
@@ -71,35 +71,35 @@ header#main-menu {
     border-bottom: 8px solid blue;
 }
 
-#main-menu nav {
+.main-menu nav {
     height: 100%;
     box-sizing: border-box;
     line-height: var(--header-height);
 }
 
-#main-menu nav ul {
+.main-menu nav ul {
     margin: 0;
     padding: 0;
 }
 
-#main-menu nav li {
+.main-menu nav li {
     list-style-type: none;
     margin: 8px 0px;
     display: inline;
 }
 
-#main-menu nav li+li::before {
+.main-menu nav li+li::before {
     content: " | ";
 }
 
-#main-menu nav li a {
+.main-menu nav li a {
     --color-link: blue;
     color: var(--color-link);
     text-transform: uppercase;
     text-decoration: none;
 }
 
-#main-menu nav li a:hover {
+.main-menu nav li a:hover {
     --color-link: yellow;
 }
 
@@ -127,6 +127,7 @@ header.profile {
 }
 
 .profile .personal-data .p-name {
+    display: inline;
     margin-left: 10%;
     font-size: 4em;
     font-weight: 900;
@@ -228,6 +229,33 @@ main.furious-five img {
     height: 145px;
 }
 
+main.curriculum {
+    margin-top: 40px;
+}
+
+.curriculum section {
+    margin-bottom: 32px;
+    padding: 16px;
+
+    border: 2px solid black;
+    border-radius: 4px;
+    
+}
+
+.curriculum section h2 {
+    color: rgb(3, 3, 71);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.curriculum .badge {
+    height: 80px;
+    width: 80px;
+    margin: 0 16px;
+}
+
+
+
 footer {
     text-align: center;
 
@@ -241,7 +269,7 @@ testar o layout de cards para as seções e ver como fica no final.
 
 mudar a cor dos textos das seções para um azul, retirar os hr e testar um background
 
-testar: duração em cima cinza claro, com texto principal negrito, e o outro embaixo
+testar: duração de conclusão em cima cinza claro, com texto principal negrito, e o outro embaixo
 
 atividade complementar: colocar bagdes do JS e GIT logo abaixo uma do lado da outro (img inline)
 
