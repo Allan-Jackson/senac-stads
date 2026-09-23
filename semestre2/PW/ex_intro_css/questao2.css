@@ -8,6 +8,23 @@
     --header-height: 20vh;
 }
 
+html {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
 .back-blue {
     background-color: aqua;
 }
@@ -201,10 +218,6 @@ main.home article {
     padding: 0 8px;
 }
 
-h1 {
-    font-size: 2em;
-}
-
 main.home h1 {
     height: 4em;
     box-sizing: border-box;
@@ -256,6 +269,29 @@ main.curriculum {
     color: rgb(3, 3, 71);
     font-family: Arial, Helvetica, sans-serif;
 
+}
+
+.curriculum section h3 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.curriculum section .duration {
+    color: #7e7e7e;
+    font-size: .9rem;
+}
+
+.curriculum section h3+.subtitle {
+    margin-top: 8px;
+}
+
+.curriculum .section-list .section-item {
+    margin-bottom: 24px;
+}
+
+
+.badges-container {
+    margin: 16px 0;
 }
 
 .curriculum .badge {
