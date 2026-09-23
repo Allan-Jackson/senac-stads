@@ -1,0 +1,85 @@
+:root {
+    --primary-color: green;
+    --second-color: yellow;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+caption {
+    color: var(--primary-color);
+    font-weight: bold;
+    background-color: var(--second-color);
+    padding: 4px;
+}
+
+table {
+    background-image: linear-gradient(to bottom, white 0%, white 30%, #baebbc 100%);
+    border: 4px solid var(--primary-color);
+    border-collapse:collapse;
+}
+
+td,
+th {
+    width: 200px;
+    padding: 4px;
+    border: 1px solid var(--primary-color);
+}
+
+th {
+    text-align: center;
+}
+
+tr td:nth-child(2) {
+    text-align: center;
+}
+
+tr td:last-child {
+    text-align: right;
+}
+
+td{
+    background-image: var(--logo-time);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    background-origin: content-box;
+}
+
+td.sao-paulo {
+    --logo-time: url("https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/S%C3%A3o_Paulo_Futebol_Clube_logo_%282022%29.svg/1280px-S%C3%A3o_Paulo_Futebol_Clube_logo_%282022%29.svg.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=thumbnail");
+}
+
+td.flamengo {
+    --logo-time: url("https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original");
+}
+
+td.gremio {
+    --logo-time: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original");
+}
+
+td.cruzeiro {
+    --logo-time: url("https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/250px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=thumbnail");
+}
+
+td.santos {
+    --logo-time: url("https://upload.wikimedia.org/wikipedia/commons/1/15/Santos_Logo.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original");
+}
+
+td.inter {
+    --logo-time: url("https://upload.wikimedia.org/wikipedia/commons/f/f1/Escudo_do_Sport_Club_Internacional.svg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original");
+}
+
+td.palmeiras {
+    --logo-time: url("https://upload.wikimedia.org/wikipedia/commons/6/60/SE_Palmeiras_2025_crest.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original");
+}
+
+td.vasco {
+    --logo-time: url("https://thumb.wikimedia.org/wikipedia/pt/thumb/8/8b/EscudoDoVascoDaGama.svg/960px-EscudoDoVascoDaGama.svg.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=thumbnail");
+}
+
+tr+tr:hover {
+    background-color: var(--second-color);
+    color: var(--primary-color);
+}
