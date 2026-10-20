@@ -1,0 +1,110 @@
+USE northwind;
+
+/*
+	*************************************************************************************
+	**********************         RESUMO DE TRIGGER         ****************************
+    *************************************************************************************
+    
+	TRIGGER É UMA PROCEDURE QUE É EXECUTADA AUTOMATICAMENTE COM BASE EM EVENTOS E TABELAS
+    OS EVENTOS QUE ACIONAM SÃO TRÊS:
+    
+    - INSERT
+    - UPDATE
+    - DELETE
+    
+    DEVE-SE ESPECIFICAR EM QUAL TABELA A TRIGGER VAI APONTAR (TABELA ALVO)
+    E TAMBÉM QUANDO SERÁ ACIONADO:
+    
+    - BEFORE (ANTES DO EVENTO ACONTECER DE FATO)
+    - AFTER (DEPOIS DO EVENTO ACONTECER)
+    
+    - OS VALORES ANTIGOS, NO CASO DE UPDATE/DELETE, SÃO ACESSADOS COM O PREFIXO 'OLD.' ANTES DO NOME DO CAMPO
+    - OS VALORES NOVOS, NO CASO DE INSERT/UPDATE, SÃO ACESSADOS COM O PREFIXO 'NEW.' ANTES DO NOME DO CAMPO
+*/
+
+/*	CRIA TRIGGER QUE É ACIONADA APÓS O INSERT NA TABELA `ORDER DETAILS` (CARRINHO)
+    E AUTOMATIZA A BAIXA NA QUANTIDADE EM ESTOQUE DO PRODUTO ADICIONADO.
+    REALIZA ISSO PARA CADA PRODUTO ADICIONADO ('FOR EACH ROW') NO INSERT */
+delimiter //
+CREATE OR REPLACE TRIGGER tr_baixa_estoque_ins
+AFTER INSERT ON `order details`
+FOR EACH ROW
+BEGIN
+	UPDATE products
+    SET unitsInStock = unitsInStock - new.quantity
+    WHERE productId = new.productId;
+END//
+delimiter ;
+
+/*	VERIFICA OS CÓDIGOS E UNIDADES EM ESTOQUE DE ALGUNS PRODUTOS */
+SELECT productId, unitsInStock 
+FROM products
+LIMIT 10
+
+/* RETORNA ALGUNS PEDIDOS QUE NÃO POSSUEM O PRODUTO ESCOLHIDO NA `ORDER DETAILS` (CARRINHO) */
+SELECT * FROM `order details` WHERE productId <> 1 LIMIT 10;
+
+/* REALIZA O INSERT DESSE PRODUTO NO CARRINHO COM ALGUM DOS PEDIDOS DA CONSULTA ACIMA, O QUE DEVE ACIONAR A TRIGGER */
+INSERT INTO `order details` (orderId, productId, unitPrice, quantity, discount)
+VALUES (10248, 1, 100, 9, 0);
+
+/*	VERIFICA SE O ESTOQUE DO PRODUTO FOI ALTERADO COM SUCESSO. */
+SELECT productId, unitsInStock 
+FROM products
+WHERE productId = 1;
+
+/* CRIA TRIGGER QUE ACIONA AO DELETAR O ITEM DO `ORDER DETAILS` (CARRINHO) E RETORNA A QUANTIDADE DO PRODUTO NO ESTOQUE */
+delimiter //
+CREATE OR REPLACE TRIGGER tr_baixaEstoque_del
+AFTER DELETE ON `order details`
+FOR EACH ROW
+BEGIN
+	UPDATE products 
+    SET unitsInStock = unitsInStock + old.quantity
+    WHERE productId = old.productId;
+END//
+delimiter ;
+
+SELECT * 
+FROM `order details`
+WHERE productId = 1 and orderId = 10248;
+
+/* DELETAR O PRODUTO DO CARRINHO */
+DELETE FROM `order details` 
+WHERE productId = 1 and orderId = 10248;
+
+/*	VERIFICA SE O ESTOQUE DO PRODUTO FOI ALTERADO COM SUCESSO. */
+SELECT productId, unitsInStock 
+FROM products
+WHERE productId = 1;
+
+/*  CRIA TRIGGER QUE ACIONA AO ATUALIZAR O ITEM DO `ORDER DETAILS` (CARRINHO) E ALTERA A QUANTIDADE DO PRODUTO NO ESTOQUE 
+	SE A QUANTIDADE É AUMENTADA, A DIFERENÇA NO ESTOQUE DEVE DIMINUIR ESSA DIFERENÇA,
+    SE A QUANTIDADE É REDUZIDA NO CARRINHO, A DIFERENÇA DEVE AUMENTAR NO ESTOQUE
+*/
+delimiter //
+CREATE OR REPLACE TRIGGER tr_baixaEstoque_upd
+AFTER UPDATE ON `order details`
+FOR EACH ROW
+BEGIN
+	DECLARE varDiffQtd SMALLINT(2) DEFAULT old.quantity - new.quantity;
+    
+	UPDATE products 
+    SET unitsInStock = unitsInStock + varDiffQtd
+    WHERE productId = old.productId;
+END//
+delimiter ;
+
+/* VERIFICA O VALOR ATUAL NO CARRINHO*/
+SELECT * 
+FROM `order details`
+WHERE productId = 1 and orderId = 10248;
+
+/* ATUALIZA A QUANTIDADE NO CARRINHO */
+UPDATE `order details` SET quantity = 10 WHERE productId = 1 and orderId = 10248;
+
+/*	VERIFICA SE O ESTOQUE DO PRODUTO FOI ALTERADO COM SUCESSO. */
+SELECT productId, unitsInStock 
+FROM products
+WHERE productId = 1;
+
