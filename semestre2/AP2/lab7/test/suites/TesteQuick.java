@@ -65,8 +65,8 @@ public class TesteQuick {
         int[] arr = {-1, 2, 3, 8, 28, 0, 7};
 
         //dado esperado
-        int[] expected = {-1, 2, 3, 7, 28, 0, 8};
-        int expectRes = 3;
+        int[] expected = {-1, 2, 3, 0, 28, 7, 8};
+        int expectRes = 5;
 
         //unidade a ser testada
         try{
@@ -92,7 +92,7 @@ public class TesteQuick {
 
         //dado esperado
         int[] expected = {6, 4, 5, 2, 7, 18, 8};
-        int posicaoPivo = 3;
+        int posicaoPivo = 4;
 
         //unidade a ser testada
         try{
